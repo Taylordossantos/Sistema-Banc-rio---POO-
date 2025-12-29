@@ -4,6 +4,9 @@
 from Entidades.cliente import Cliente
 # Importa a classe base Conta e suas subclasses (Corrente e Poupança)
 from Entidades.conta import Conta, ContaCorrente, ContaPoupanca
+# Importa a exceção personalizada para conta inexistente
+from utilitarios.exceptions import ContaInexistenteError
+
 
 # Define a classe Banco
 class Banco:

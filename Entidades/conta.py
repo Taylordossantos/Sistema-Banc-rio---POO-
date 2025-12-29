@@ -4,6 +4,8 @@ from abc import ABC, abstractmethod
 # Importa a classe datetime para registrar data e hora das transações
 from datetime import datetime
 
+# Importa a exceção personalizada para saldo insuficiente
+from utilitarios.exceptions import SaldoInsuficienteError
 
 
 # Define a classe abstrata Conta, que serve como base para outros tipos de contas
