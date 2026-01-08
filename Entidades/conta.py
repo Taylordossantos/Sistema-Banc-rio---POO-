@@ -43,6 +43,20 @@ class Conta(ABC):
 
         """Getter para o saldo, permitindo acesso controlado."""
         return self._saldo
+    @property
+    def numero(self):
+        """Retorna o número da conta."""
+        return self._numero
+
+    @property
+    def cliente(self):
+        """Retorna o cliente dono da conta."""
+        return self._cliente
+
+    @property
+    def historico(self):
+        """Retorna o histórico de transações."""
+        return self._historico
 
     # Método de classe para consultar o número total de contas
     @classmethod

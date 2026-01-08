@@ -34,8 +34,8 @@ def menu_conta(banco):
         # Loop de operações dentro da conta
         while True:
 
-            print(f"\n--- Operações para Conta Nº {conta._numero} ---")
-            print(f"Cliente: {conta._cliente.nome} | Saldo: R${conta.saldo:.2f}")
+            print(f"\n--- Operações para Conta Nº {conta.numero} ---")
+            print(f"Cliente: {conta.cliente.nome} | Saldo: R${conta.saldo:.2f}")
             print("1. Depositar")
             print("2. Sacar")
             print("3. Ver Extrato")

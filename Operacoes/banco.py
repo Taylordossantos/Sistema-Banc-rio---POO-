@@ -3,7 +3,7 @@
 # Importa a classe Cliente
 from entidades.cliente import Cliente
 # Importa a classe base Conta e suas subclasses (Corrente e Poupança)
-from Entidades.conta import Conta, ContaCorrente, ContaPoupanca
+from entidades.conta import Conta, ContaCorrente, ContaPoupanca
 # Importa a exceção personalizada para conta inexistente
 from utilitarios.exceptions import ContaInexistenteError
 
