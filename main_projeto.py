@@ -3,7 +3,7 @@
 # Módulo Principal da Aplicação
 
 # Importa a classe Banco responsável por gerenciar clientes e contas
-from Operacoes.banco import Banco
+from operacoes.banco import Banco
 
 # Importa exceções personalizadas usadas no fluxo de operações
 from utilitarios.exceptions import SaldoInsuficienteError, ContaInexistenteError
