@@ -33,3 +33,11 @@ class ContaInexistenteError(Exception):
         
         # Chama o construtor da classe Exception com a mensagem
         super().__init__(self.mensagem)
+        
+class ClienteInexistenteError(Exception):
+    """Exceção levantada ao tentar operar com um cliente que não existe."""
+    
+    def __init__(self, cpf, mensagem="O cliente especificado não foi encontrado."):
+        self.cpf = cpf
+        self.mensagem = f"{mensagem} CPF: {cpf}"
+        super().__init__(self.mensagem)

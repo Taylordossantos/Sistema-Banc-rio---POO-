@@ -5,7 +5,7 @@ from entidades.cliente import Cliente
 # Importa a classe base Conta e suas subclasses (Corrente e Poupança)
 from entidades.conta import Conta, ContaCorrente, ContaPoupanca
 # Importa a exceção personalizada para conta inexistente
-from utilitarios.exceptions import ContaInexistenteError
+from utilitarios.exceptions import ContaInexistenteError, ClienteInexistenteError
 
 
 # Define a classe Banco
@@ -88,3 +88,9 @@ class Banco:
         if not conta:
             raise ContaInexistenteError(numero_conta)
         return conta
+    def buscar_cliente(self, cpf: str) -> Cliente:
+        """Busca um cliente pelo seu CPF."""
+        cliente = self._clientes.get(cpf)
+        if not cliente:
+            raise ClienteInexistenteError(cpf)
+        return cliente

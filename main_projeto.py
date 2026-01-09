@@ -6,7 +6,7 @@
 from operacoes.banco import Banco
 
 # Importa exceções personalizadas usadas no fluxo de operações
-from utilitarios.exceptions import SaldoInsuficienteError, ContaInexistenteError
+from utilitarios.exceptions import SaldoInsuficienteError, ContaInexistenteError, ClienteInexistenteError
 
 # Função que exibe o menu principal da aplicação
 def menu_principal():
@@ -104,15 +104,13 @@ def main():
             
             # Cria uma nova conta vinculada a um cliente existente
             cpf = input("Digite o CPF do cliente para vincular a conta: ")
-            cliente = banco._clientes.get(cpf)
-            
-            if cliente:
-
+            try:
+                cliente = banco.buscar_cliente(cpf)
                 tipo = input("Digite o tipo da conta (corrente/poupanca): ")
                 banco.criar_conta(cliente, tipo)
-            
-            else:
-                print("Cliente não encontrado. Cadastre o cliente primeiro.")
+            except ClienteInexistenteError as e:
+                print(f"Erro: {e}")
+
 
         elif opcao == '3':
 
