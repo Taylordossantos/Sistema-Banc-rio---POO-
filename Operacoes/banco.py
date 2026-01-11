@@ -88,9 +88,44 @@ class Banco:
         if not conta:
             raise ContaInexistenteError(numero_conta)
         return conta
+    
+    # Método para buscar um cliente pelo CPF
     def buscar_cliente(self, cpf: str) -> Cliente:
         """Busca um cliente pelo seu CPF."""
         cliente = self._clientes.get(cpf)
         if not cliente:
             raise ClienteInexistenteError(cpf)
         return cliente
+    
+    # Método para realizar transferência entre contas
+    def transferir(self, numero_conta_origem: int, numero_conta_destino: int, valor: float) -> None:
+    
+        """ Realiza uma transferência de dinheiro entre duas contas.
+        
+        Args:
+            numero_conta_origem: Número da conta que envia o dinheiro
+            numero_conta_destino: Número da conta que recebe o dinheiro
+            valor: Valor a ser transferido
+        
+        Raises:
+            ContaInexistenteError: Se alguma conta não existir
+            SaldoInsuficienteError: Se a conta de origem não tiver saldo"""
+      # Busca as contas (irá lançar exceção se não existirem)
+        conta_origem = self.buscar_conta(numero_conta_origem)
+        conta_destino = self.buscar_conta(numero_conta_destino)
+        
+        # Valida o valor
+        if valor <= 0:
+            print("Valor de transferência inválido. Digite um valor maior que zero.")
+            return
+        
+        # Realiza o saque da conta de origem (pode lançar SaldoInsuficienteError)
+        conta_origem.sacar(valor)
+        
+        # Realiza o depósito na conta de destino
+        conta_destino.depositar(valor)
+        
+        # Mensagem de sucesso
+        print(f"Transferência de R${valor:.2f} realizada com sucesso!")
+        print(f"De: Conta {numero_conta_origem} ({conta_origem.cliente.nome})")
+        print(f"Para: Conta {numero_conta_destino} ({conta_destino.cliente.nome})")

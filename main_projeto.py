@@ -15,7 +15,8 @@ def menu_principal():
     print("1. Adicionar Cliente")
     print("2. Criar Conta")
     print("3. Acessar Conta")
-    print("4. Sair\n")
+    print("4. Transferência entre Contas")
+    print("5. Sair\n")
 
     # Retorna a opção digitada pelo usuário
     return input("Escolha uma opção: ")
@@ -118,14 +119,31 @@ def main():
             menu_conta(banco)
             
         elif opcao == '4':
+            # Realiza uma transferência entre contas
+            try:
+                num_origem = int(input("Digite o número da conta de origem: "))
+                num_destino = int(input("Digite o número da conta de destino: "))
+                valor = float(input("Digite o valor para transferência: "))
+                
+                banco.transferir(num_origem, num_destino, valor)
+            
+            except ContaInexistenteError as e:
+                print(f"Erro: {e}")
+            
+            except SaldoInsuficienteError as e:
+                print(f"Erro: {e}")
+            
+            except ValueError:
+                print("Erro: Entrada inválida. Por favor, digite números válidos.")
 
+        elif opcao == '5':
             # Encerra o programa
             print("\nObrigado por usar o nosso sistema. Até logo!\n")
             break
-        
-        else:
 
+        else:
             print("\nOpção inválida. Por favor, tente novamente.\n")
+                
 
 # Ponto de entrada da aplicação
 if __name__ == "__main__":
