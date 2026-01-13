@@ -1,79 +1,103 @@
-# Sistema-Bancario-Python-POO-
-🏦 Sistema Bancário Digital em Python
-Um sistema bancário funcional que demonstra os principais conceitos de Programação Orientada a Objetos (POO) em Python.
+# 🏦 Sistema Bancário em Python
 
-📋 Funcionalidades
-✅ Cadastro de clientes
+Um projeto educacional de sistema bancário com POO, testes automatizados e persistência de dados em JSON.
 
-✅ Criação de contas (Corrente e Poupança)
+## 📋 Funcionalidades
 
-✅ Depósitos e saques
+✅ Gerenciar clientes e contas  
+✅ Depositar, sacar e transferir  
+✅ Histórico de transações  
+✅ Dados persistidos entre execuções  
+✅ Testes automatizados (23 testes)
 
-✅ Visualização de extrato
+## 📈 Evolução do Projeto
 
-✅ Limite de cheque especial (Conta Corrente)
+### Base (Data Science Academy)
 
-✅ Histórico de transações
+- Classes: Cliente, Conta, ContaCorrente, ContaPoupanca, Banco
+- Operações básicas: depositar, sacar, extrato
+- Exceções: SaldoInsuficienteError, ContaInexistenteError
+- CLI básica
 
-🎓 Conceitos POO Demonstrados
-Encapsulamento - Atributos protegidos (_)
+### Melhorias Implementadas
 
-Herança - Classe abstrata Conta com subclasses
+- ✅ Encapsulamento com @property
+- ✅ Método buscar_cliente() centralizado
+- ✅ Exceção ClienteInexistenteError
+- ✅ Transferência entre contas
+- ✅ Suite de 23 testes com pytest
+- ✅ Persistência em JSON (dados.json)
+- ✅ Padronização de pastas (PEP 8)
 
-Polimorfismo - Método sacar() diferentes por tipo de conta
+## 🚀 Como usar
 
-Composição - Banco composto por Clientes e Contas
+### Pré-requisitos
 
-Exceções Customizadas - Tratamento de erros específicos
+- Python 3.8+
+- pip (gerenciador de pacotes)
 
-📂 Estrutura
-text
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/Taylordossantos/Sistema-Banc-rio---POO-.git
+cd Sistema-Banc-rio---POO-
+
+# (Opcional) Crie um ambiente virtual
+python -m venv venv
+source venv/bin/activate  # No Windows: venv\Scripts\activate
+
+# Instale as dependências
+pip install pytest
+
+
+###Executar o sistema
+
+execute o arquivo main_projeto.py
+
+Você verá o menu principal:
+
+
+---Projeto - Sistema Bancário Digital ---
+
+1. Adicionar Cliente
+2. Criar Conta
+3. Acessar Conta
+4. Transferência entre Contas
+5. Sair
+
+Escolha uma opção:
+
+
+'''Rodar os testes'''
+Para rodar os testes, execute: pytest no terminal
+
+
+📁 Estrutura do projeto
+
+Sistema-Banc-rio---POO-/
 ├── entidades/
-│   ├── cliente.py
-│   └── conta.py
 ├── operacoes/
-│   └── banco.py
 ├── utilitarios/
-│   └── exceptions.py
-└── main_projeto.py
-🚀 Como Usar
-Executar
-bash
-python main_projeto.py
-Fluxo Básico
-Adicionar cliente (nome + CPF)
+├── tests/
+├── main_projeto.py
+└── dados.json
 
-Criar conta (tipo: corrente ou poupança)
 
-Acessar conta e realizar operações
-
-Exemplo
-text
-Menu: 1 (Adicionar Cliente)
-Nome: João Silva
-CPF: 12345678900
-
-Menu: 2 (Criar Conta)
-CPF: 12345678900
-Tipo: corrente
-
-Menu: 3 (Acessar Conta)
-Número: 1
-→ Depositar, Sacar, Ver Extrato
-📚 Classes Principais
-Classe	Descrição
-Cliente	Armazena dados do cliente e suas contas
-Conta	Classe abstrata base para tipos de conta
-ContaCorrente	Conta com limite de cheque especial
-ContaPoupanca	Conta sem limite
-Banco	Gerencia clientes e contas
-⚠️ Exceções
-SaldoInsuficienteError - Saldo insuficiente para saque
-
-ContaInexistenteError - Conta não encontrada
-
-🔧 Requisitos
+🛠️ Tecnologias
 Python 3.8+
 
-📝 Licença
-Projeto educacional - Data Science Academy
+POO (Herança, Polimorfismo, Encapsulamento)
+
+pytest
+
+JSON
+
+👨‍💻 Autor
+Taylor dos Santos
+ LinkedIn: www.linkedin.com/in/taylor-dos-santos | GitHub: https://github.com/Taylordossantos
+
+Última atualização: 13 de janeiro de 2026
+
+
+```
