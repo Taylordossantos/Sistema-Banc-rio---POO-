@@ -4,9 +4,10 @@
 
 # Importa a classe Banco responsável por gerenciar clientes e contas
 from operacoes.banco import Banco
-
 # Importa exceções personalizadas usadas no fluxo de operações
 from utilitarios.exceptions import SaldoInsuficienteError, ContaInexistenteError, ClienteInexistenteError
+# Importa a classe de persistência para salvar e carregar dados
+from utilitarios.persistencia import PersistenciaBanco 
 
 # Função que exibe o menu principal da aplicação
 def menu_principal():
@@ -89,6 +90,15 @@ def main():
     # Cria o objeto Banco
     banco = Banco("Banco Digital")
 
+      # Cria o gerenciador de persistência
+    persistencia = PersistenciaBanco("dados.json")
+    
+    # Carrega os dados anteriores (se existirem)
+    print("Carregando dados do banco...")
+    persistencia.carregar_banco(banco)
+    print()
+
+
     # Loop principal do sistema
     while True:
 
@@ -137,10 +147,11 @@ def main():
                 print("Erro: Entrada inválida. Por favor, digite números válidos.")
 
         elif opcao == '5':
-            # Encerra o programa
-            print("\nObrigado por usar o nosso sistema. Até logo!\n")
+            # Salva os dados antes de encerrar
+            print("\nSalvando dados do banco...")
+            persistencia.salvar_banco(banco)
+            print("Obrigado por usar o nosso sistema. Até logo!\n")
             break
-
         else:
             print("\nOpção inválida. Por favor, tente novamente.\n")
                 
