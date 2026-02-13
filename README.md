@@ -1,4 +1,61 @@
-# 🏦 Sistema Bancário em Python
+# 🏦  Python Banking System (OOP) / Sistema Bancário em Python
+
+🇺🇸 English
+## 📌 Project Overview
+This project implements a simple banking system using Object-Oriented Programming (OOP) principles in Python.  
+It simulates basic banking operations while emphasizing modular structure, clean logic, and automated testing.
+
+The project was developed to practice backend logic, data persistence, and debugging workflows.
+
+---
+
+## ⚙️ Features
+- Account creation
+- Deposits and withdrawals
+- Transaction tracking
+- Data persistence using JSON
+- Automated testing with pytest
+
+---
+
+## 🧰 Technologies Used
+- Python
+- JSON
+- pytest
+- Object-Oriented Programming (OOP)
+
+---
+
+## 🚀 How to Run
+
+```bash
+# Clone repository
+git clone https://github.com/Taylordossantos/Sistema-Banc-rio---POO-.git
+
+# Navigate to folder
+cd Sistema-Banc-rio---POO-
+
+# Run application
+python main.py
+🧪 Running Tests
+pytest
+🎯 Learning Objectives
+Practice OOP design patterns
+
+Implement persistent storage
+
+Improve debugging and testing skills
+
+Strengthen backend logic development
+
+👤 Author
+Taylor dos Santos
+Software Development Student
+Python • JavaScript • SQL
+
+
+
+ 🇧🇷 Português
 
 Um projeto educacional de sistema bancário com POO, testes automatizados e persistência de dados em JSON.
 
